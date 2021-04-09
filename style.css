@@ -1,5 +1,5 @@
 :root {
-  --green: #54e6af;
+  --green: rgb(86, 230, 175);
   --dark-grey: #2c344b;
   --medium-grey: #5a668a;
   --light-grey: #c2cbe5;
@@ -14,6 +14,7 @@ body {
   font-weight: 200;
   font-size: 18px;
   background-color: var(--black-blue);
+  width: 100%;
   height: 100vh;
   position: relative;
 }
@@ -61,12 +62,15 @@ h1 {
 }
 
 .background-img {
-  text-align: right;
+  background-image: url("stylesheet/images/desktop/image-host.jpg");
+  background-size: cover;
   z-index: 0;
   /* border: 1px solid red; */
   position: absolute;
   bottom: 0;
   right: 0;
+  width: 70%;
+  height: 100%;
 }
 
 /* --------------------- HEADER ----------------------- */
@@ -78,6 +82,7 @@ h1 {
   width: 450px;
   opacity: 80%;
   line-height: 28px;
+  margin-bottom: 0;
 }
 
 /* -------------------- FORM -------------------------- */
@@ -112,7 +117,161 @@ form button {
   border: none;
   position: absolute;
   top: 45px;
-  left: 270px;
+  left: 265px;
   background-color: var(--green);
   font-weight: 700;
+}
+
+form button:hover {
+  background-color: rgb(176, 255, 225);
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+/* ------------------------- TABLET DESIGN -------------------------- */
+@media (max-width: 1000px) {
+  h1,
+  h2 {
+    font-size: 42px;
+    line-height: 32px;
+    font-weight: 200;
+    text-transform: uppercase;
+  }
+  p {
+    font-size: 0.8em;
+  }
+  .container {
+    /* border: 1px solid magenta; */
+    top: 5vw;
+    margin-left: 5vw;
+  }
+
+  .background-img {
+    background-image: url("stylesheet/images/tablet/image-host.jpg");
+    /* border: 1px solid red; */
+    position: absolute;
+    bottom: 100px;
+  }
+
+  .header {
+    /* border: 1px solid blue; */
+    width: 550px;
+    text-align: left;
+    z-index: 1;
+    background-color: var(--black-blue);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+/* ------------------------- MOBILE DESIGN -------------------------- */
+
+@media (max-width: 700px) {
+  .background-img {
+    display: none;
+  }
+
+  .container {
+    height: 100%;
+    /* border: 1px solid magenta; */
+    background-image: url("stylesheet/images/mobile/image-host.jpg"),
+      linear-gradient(130deg, var(--black-blue), var(--medium-grey));
+    background-blend-mode: overlay;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 0;
+    margin: 0;
+    text-align: center;
+    padding: 40px;
+  }
+
+  .header {
+    /* border: 1px solid blue; */
+    width: 100%;
+    text-align: center;
+    padding: 0;
+    z-index: 1;
+    background-color: transparent;
+    position: relative;
+    bottom: 0;
+    left: 0;
+  }
+  h1,
+  h2 {
+    font-size: 28px;
+    line-height: 28px;
+    font-weight: 200;
+    text-transform: uppercase;
+  }
+  p {
+    font-size: 0.8em;
+  }
+
+  .title-header {
+    margin: 50px auto;
+  }
+
+  .paragraph {
+    width: 100%;
+    opacity: 80%;
+    line-height: 28px;
+    margin: 50px auto;
+  }
+
+  .streaming-app {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1vw;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+
+    position: absolute;
+  }
+  .streaming-app img {
+    width: 100%;
+  }
+
+  form {
+    position: absolute;
+    top: 50vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  input {
+    position: unset;
+    text-decoration: none;
+    padding: 15px 0;
+    margin: 20px auto;
+    border-radius: 40px;
+    width: 100%;
+    border: none;
+    outline-style: none;
+    background-color: var(--dark-grey);
+  }
+
+  ::placeholder {
+    color: var(--medium-grey);
+    font-weight: 700;
+  }
+
+  ::placeholder:active {
+    color: var(--white);
+  }
+
+  form button {
+    position: unset;
+    text-decoration: none;
+    padding: 15px 40px;
+    margin: 0 auto;
+    border-radius: 30px;
+    width: 100%;
+    border: none;
+    background-color: var(--green);
+    font-weight: 700;
+  }
 }
