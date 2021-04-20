@@ -140,7 +140,6 @@ form button:hover {
     font-size: 0.8em;
   }
   .container {
-    /* border: 1px solid magenta; */
     top: 5vw;
     margin-left: 5vw;
   }
@@ -171,8 +170,14 @@ form button:hover {
     display: none;
   }
 
+  .pod-logo {
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+  }
+
   .container {
-    height: 100%;
+    height: 100vh;
     /* border: 1px solid magenta; */
     background-image: url("stylesheet/images/mobile/image-host.jpg"),
       linear-gradient(130deg, var(--black-blue), var(--medium-grey));
@@ -181,9 +186,12 @@ form button:hover {
     background-repeat: no-repeat;
     background-size: cover;
     top: 0;
-    margin: 0;
+    margin: 0 auto;
     text-align: center;
-    padding: 40px;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
 
   .header {
